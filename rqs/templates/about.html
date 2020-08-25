@@ -1,0 +1,126 @@
+{% extends "layouts/base.html" %}
+{% load humanize %}
+{% block title %}  {% endblock title %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}
+<style>
+
+.social-buttons a {
+    display: inline-flex;
+    text-decoration: none;
+    font-size: 4rem;
+    width: 90px;
+    height: 90px;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 0 8px;
+}
+
+.social-buttons a::before {
+    content: "";
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    background: linear-gradient(45deg, #22a6b3, #30336b);
+    border-radius: 50%;
+    z-index: -1;
+    transition: 0.3s ease-in;
+}
+
+.social-buttons a:hover::before {
+    transform: scale(0);
+}
+
+.social-buttons a i {
+    transition: 0.3s ease-in;
+}
+
+.social-buttons a img {
+    transition: 0.3s ease-in;
+}
+.social-buttons a:hover img {
+    background: linear-gradient(45deg, #22a6b3, #30336b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transform: scale(2.2);
+}
+.social-buttons a:hover i {
+    background: linear-gradient(45deg, #22a6b3, #30336b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transform: scale(2.2);
+}
+</style>
+{% endblock stylesheets %}
+{% block content %}
+<div class="page-inner mt--5">
+    <div class="row justify-content-center align-items-center mb-5">
+        <div class="col-md-11 pl-md-0 pr-md-0">
+            <div class="card-pricing2 card-primary">
+                <div class="pricing-header">
+                    <h3 class="fw-bold">Thông Tin</h3>
+                    <span class="sub-title">liên hệ</span>
+                </div>
+                <div class="price-value">
+                    <div class="value" style="background-color: pink">
+                        <img src="/static/assets/img/logo.svg" alt="navbar brand" class="navbar-brand" style="width: 110px; height: 110px;">
+                    </div>
+                </div>
+                <div class="pricing-content">
+                    <div class="col-md-11">
+                        <div class="card">
+                            <div class="card-header">
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-3 col-md-4 col-sm-3">
+                                        <div class="nav flex-column nav-pills nav-secondary nav-pills-no-bd nav-pills-icons" id="v-pills-tab-with-icon" role="tablist" aria-orientation="vertical">
+                                            <a class="nav-link active" id="v-pills-mobile-tab-icons" data-toggle="pill" href="#v-pills-mobile-icons" role="tab" aria-controls="v-pills-mobile-icons" aria-selected="true">
+                                                <i class="fas fa-mobile-alt"></i>
+                                                Điện thoại
+                                            </a>
+                                            <a class="nav-link" id="v-pills-address-tab-icons" data-toggle="pill" href="#v-pills-address-icons" role="tab" aria-controls="v-pills-address-icons" aria-selected="false">
+                                                <i class="fas fa-home"></i>
+                                                Địa chỉ
+                                            </a>
+                                            <a class="nav-link" id="v-pills-info-tab-icons" data-toggle="pill" href="#v-pills-info-icons" role="tab" aria-controls="v-pills-info-icons" aria-selected="false">
+                                                <i class="fas fa-info"></i>
+                                                Thông tin thêm
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-9 col-md-8 col-sm-9">
+                                        <div class="tab-content" id="v-pills-with-icon-tabContent">
+                                            <div class="tab-pane fade show active" id="v-pills-mobile-icons" role="tabpanel" aria-labelledby="v-pills-mobile-tab-icons">
+                                                <p style="font-size: 2rem">0979-726-873</p>
+                                            </div>
+                                            <div class="tab-pane fade" id="v-pills-address-icons" role="tabpanel" aria-labelledby="v-pills-address-tab-icons">
+                                                <p class="card-category" style="font-size: 1.5rem">
+                                                            Khu tập thể phân viện thú y miền trung,
+                                                            số 1 Ngô Văn Sở, tp Nha Trang, tỉnh Khánh Hòa
+                                                            </p>
+                                            </div>
+                                            <div class="tab-pane fade" id="v-pills-info-icons" role="tabpanel" aria-labelledby="v-pills-info-tab-icons">
+                                                <div class="social-buttons">
+                                                    <a href="https://www.facebook.com/yensaobabynhatrang"><i class="fab fa-facebook"></i></a>
+                                                    <a href=""><img src="/static/assets/img/zalo.svg" style="width: 60px; height: 60px"></a>
+                                                    <a href=""><i class="fab fa-youtube"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+{% block javascripts %}
+{% endblock javascripts %}

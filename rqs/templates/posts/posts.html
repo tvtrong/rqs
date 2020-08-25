@@ -1,0 +1,71 @@
+{% comment %}{% extends 'layouts/base.html' %}{% endcomment %}
+{% load humanize %}
+{% block title %}  {% endblock title %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}
+<style>
+hr {
+  border: 0 solid #eeedef;
+  border-top-width: 1px;
+  height: 0;
+  margin: 60px auto;
+  clear: both;
+  display: block;
+  width: 99px;
+  position: relative;
+}
+hr:before {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+  background-color: #999;
+}
+hr:before {
+  left: 0;
+  bottom: -3px;
+box-shadow: 400px 0 0 -1px #999, 400px 0 0 0 #aaa;
+}
+hr:after {
+  content:url(/static/assets/img/brand/logo.svg);
+  display:block;
+  position:absolute;
+  left:50%;
+  height:50px;
+  width:50px;
+  margin:-25px 0 0 -25px;
+  border-radius:50px;
+  overflow:hidden;
+  box-shadow: 0 0 0 1px #eef, 0 0 5px;
+}
+
+hr {transform:scale(2)}
+body {background:#789
+</style>
+{% endblock stylesheets %}
+{% block content %}
+<div class="row">
+        {% for post in posts %}
+        <div class="col-xl-4 col-md-6 col-sm-12">
+            <div class="card card-post card-round">
+                <img class="card-img-top" src="{{post.image.url}}" alt="Card image cap" width="30%" height="30%">
+                <div class="card-body">
+                    
+                    <hr class="stylec"></hr>
+                    <h3 class="card-title">
+                        <a href="{% url 'post_detail' post.id %}">
+                            {{ post.title}}
+                        </a>
+                    </h3>
+                    <p class="card-post">{{post.short_text}}.</p>
+                    <a href="{% url 'post_detail' post.id %}" class="btn btn-primary btn-rounded btn-sm">Read More</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock content %}
+{% block javascripts %}
+{% endblock javascripts %}
